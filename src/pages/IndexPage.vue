@@ -1,5 +1,5 @@
 <template>
-  <PhoneNum
+  <QPhoneInput
     v-model="phone"
     v-model:valid="valid"
     dense
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import PhoneNum from 'src/components/phone/PhoneNum.vue';
+import QPhoneInput from 'src/components/phone/QPhoneInput.vue';
 import { ref } from 'vue';
 
 const valid = ref<boolean | string>(false);

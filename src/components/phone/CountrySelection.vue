@@ -45,7 +45,7 @@
       </div>
     </template>
     <template v-slot:no-option>
-      <div class="v3-q-tel--country-selector last-search-item q-pa-sm">
+      <div class="v3-q-tel--country-selector q-pa-sm">
         <q-input
           v-model="searchText"
           ref="search"
@@ -64,7 +64,7 @@
       <div class="q-pa-sm">None match</div>
     </template>
     <template v-slot:before-options>
-      <div class="v3-q-tel--country-selector last-search-item q-pa-sm">
+      <div class="v3-q-tel--country-selector q-pa-sm">
         <q-input
           v-model="searchText"
           ref="search"
