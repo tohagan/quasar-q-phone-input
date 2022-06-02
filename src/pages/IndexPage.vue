@@ -1,5 +1,5 @@
 quas<template>
-  <q-page>
+  <q-page padding>
     <PhoneNum
       v-model="phone"
       v-model:valid="isPhoneValid"
@@ -24,5 +24,5 @@ import PhoneNum from 'src/components/phone/PhoneNum.vue';
 import { ref } from 'vue';
 
 const isPhoneValid = ref<boolean | undefined>(false);
-const phone = ref(string);
+const phone = ref('');
 </script>
