@@ -44,6 +44,25 @@
         </div>
       </div>
     </template>
+    <template v-slot:no-option>
+      <div class="v3-q-tel--country-selector last-search-item q-pa-sm">
+        <q-input
+          v-model="searchText"
+          ref="search"
+          @update:model-value="performSearch"
+          dense
+          outlined
+          :label="searchLabel"
+          class="bg-white"
+        >
+          <template v-slot:prepend>
+            <q-icon name="search" />
+          </template>
+        </q-input>
+      </div>
+
+      <div class="q-pa-sm">None match</div>
+    </template>
     <template v-slot:before-options>
       <div class="v3-q-tel--country-selector last-search-item q-pa-sm">
         <q-input
@@ -56,7 +75,7 @@
           class="bg-white"
         >
           <template v-slot:prepend>
-            <q-icon name="app.search" />
+            <q-icon name="search" />
           </template>
         </q-input>
       </div>
