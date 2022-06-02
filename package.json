@@ -5,6 +5,9 @@
   "productName": "Quasar Phone demo",
   "author": "Tony OHagan",
   "private": true,
+  "stackblitz": {
+    "startCommand": "quasar dev"
+  },
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
