@@ -46,7 +46,7 @@ import { Country, getCountry } from './countries';
 
 const props = defineProps({
   modelValue: { type: String, default: null, required: false }, // v-model
-  valid: Boolean, // v-model:valid
+  valid: [Boolean, String], // v-model:valid
   icon: String,
   tabindex: String,
   required: { type: Boolean, default: false },

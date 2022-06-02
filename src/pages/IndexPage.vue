@@ -2,7 +2,7 @@ quas<template>
   <q-page padding>
     <PhoneNum
       v-model="phone"
-      v-model:valid="isPhoneValid"
+      v-model:valid="valid"
       dense
       outlined
       required
@@ -14,7 +14,7 @@ quas<template>
 
     <pre>
       phone = {{ phone }}
-      isPhoneValid = {{ isPhoneValid }}
+      valid = {{ valid }}
     </pre>
   </q-page>
 </template>
@@ -23,6 +23,6 @@ quas<template>
 import PhoneNum from 'src/components/phone/PhoneNum.vue';
 import { ref } from 'vue';
 
-const isPhoneValid = ref<boolean | undefined>(false);
+const valid = ref<boolean | string>(false);
 const phone = ref('');
 </script>
