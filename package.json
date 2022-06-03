@@ -1,14 +1,13 @@
 {
   "name": "quasar-phone-demo",
-  "version": "0.0.1",
-  "description": "Quasar Phone demo",
-  "productName": "Quasar Phone demo",
+  "version": "1.0.1",
+  "productName": "Quasar v2 - QPhoneInput",
+  "description": "Qinput control for formatting and validating international phone numbers",
   "author": "Tony OHagan",
-  "private": true,
-  "stackblitz": {
-    "startCommand": "quasar dev"
-  },
+  "license": "MIT",
+  "private": false,
   "scripts": {
+    "start": "quasar dev",
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
     "test": "echo \"No test specified\" && exit 0"
