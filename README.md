@@ -4,4 +4,6 @@ Supports international phone numbers with auto formatting as you type that adapt
 
 [Fork and run demo on StackBlitz ⚡️](https://stackblitz.com/fork/github/tohagan/quasar-q-phone-input)
 
-Needs more work to convert to Quasar Extension and to genralise properties a bit more. 
+# TODO
+- Convert to Quasar Extension. 
+- Add a `rules` property to replace hard coded validation rules in this demo.
