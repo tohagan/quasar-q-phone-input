@@ -4,9 +4,11 @@ Supports international phone numbers with auto formatting as you type that adapt
 
 Uses [`libphonenumber-js`](https://catamphetamine.gitlab.io/libphonenumber-js/) to minimise bundle download size.  
 
+## Demo
+
 [Fork and run demo on StackBlitz ⚡️](https://stackblitz.com/fork/github/tohagan/quasar-q-phone-input)
 
-# TODO
+## TODO
 - Convert to Quasar Extension. 
 - Add a `rules` property to replace hard coded validation rules in this demo.
 - Improve smarts related to auto switching country 
