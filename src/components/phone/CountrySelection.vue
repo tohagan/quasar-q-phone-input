@@ -45,40 +45,38 @@
       </div>
     </template>
     <template v-slot:no-option>
-      <div class="v3-q-tel--country-selector q-pa-sm">
-        <q-input
-          v-model="searchText"
-          ref="search"
-          @update:model-value="performSearch"
-          dense
-          outlined
-          :label="searchLabel"
-          class="bg-white"
-        >
-          <template v-slot:prepend>
-            <q-icon name="search" />
-          </template>
-        </q-input>
-      </div>
+      <!-- Same as v-slot:before-options -->
+      <q-input
+        class="sticky-input z-top v3-q-tel--country-selector q-pa-sm bg-white"
+        ref="search"
+        :label="searchLabel"
+        v-model="searchText"
+        @update:model-value="performSearch"
+        dense
+        outlined
+      >
+        <template v-slot:prepend>
+          <q-icon name="search" />
+        </template>
+      </q-input>
 
       <div class="q-pa-sm">None match</div>
     </template>
     <template v-slot:before-options>
-      <div class="v3-q-tel--country-selector q-pa-sm">
-        <q-input
-          v-model="searchText"
-          ref="search"
-          @update:model-value="performSearch"
-          dense
-          outlined
-          :label="searchLabel"
-          class="bg-white"
-        >
-          <template v-slot:prepend>
-            <q-icon name="search" />
-          </template>
-        </q-input>
-      </div>
+      <!-- Same as v-slot:before-no-option -->
+      <q-input
+        class="sticky-input z-top v3-q-tel--country-selector q-pa-sm bg-white"
+        ref="search"
+        :label="searchLabel"
+        v-model="searchText"
+        @update:model-value="performSearch"
+        dense
+        outlined
+      >
+        <template v-slot:prepend>
+          <q-icon name="search" />
+        </template>
+      </q-input>
     </template>
   </q-select>
 </template>
@@ -89,6 +87,11 @@
 //   border-color: #375f7d;
 //   border-width: 3px;
 // }
+.sticky-input {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
 
 .q-field--outlined .v3-q-tel-input--country {
   .q-field__control:after {
@@ -112,6 +115,7 @@
     border: none !important;
   }
 }
+
 .v3-q-tel--country-selector {
   position: sticky !important;
   bottom: 0 !important;
@@ -157,12 +161,9 @@ async function onShow() {
   console.log('onShow');
   searchText.value = '';
   performSearch();
-  // wait to render search QInput & QSelect
+  // render search QInput & QSelect before focus
   await nextTick();
   search.value?.focus();
-  // TODO: trying to scroll to search box.
-  // await delay(3000)
-  // selectCountry.value?.refresh(0)
 }
 
 function countryChanged(val: Country) {
