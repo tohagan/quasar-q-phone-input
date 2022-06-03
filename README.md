@@ -6,7 +6,7 @@ Uses [`libphonenumber-js`](https://catamphetamine.gitlab.io/libphonenumber-js/) 
 
 ## Demo
 
-[Fork and run demo on StackBlitz ⚡️](https://stackblitz.com/fork/github/tohagan/quasar-q-phone-input)
+[Fork and run demo on StackBlitz ⚡️](https://stackblitz.com/fork/github/tohagan/quasar-q-phone-input?file=?file=src%2Fcomponents%2Fphone%2FQPhoneInput.vue)
 
 ## TODO
 
