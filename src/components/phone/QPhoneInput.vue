@@ -12,7 +12,7 @@
   >
     <template v-slot:prepend>
       <q-icon v-if="icon" :name="icon" />
-      <CountrySelection
+      <CountrySelect
         :searchLabel="searchLabel"
         @countryChanged="countryChanged"
         v-model:country="country"
@@ -37,7 +37,7 @@ import parsePhoneNumber, {
 } from 'libphonenumber-js';
 
 import { QInput } from 'quasar';
-import CountrySelection from './CountrySelection.vue';
+import CountrySelect from './CountrySelect.vue';
 import { Country, getCountry } from './countries';
 
 // import { useI18n } from 'vue-i18n';
