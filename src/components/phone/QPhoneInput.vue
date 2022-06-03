@@ -38,7 +38,7 @@ import parsePhoneNumber, {
 
 import { QInput } from 'quasar';
 import CountrySelect from './CountrySelect.vue';
-import { Country, getCountry } from './countries';
+import { Country, getCountryByCode } from './countries';
 
 // import { useI18n } from 'vue-i18n';
 // // eslint-disable-next-line @typescript-eslint/unbound-method
@@ -74,7 +74,7 @@ const emit = defineEmits<{
   // }
 }>();
 
-const country: Ref<Country> = ref(getCountry('US'));
+const country: Ref<Country> = ref(getCountryByCode('US') as Country);
 const inpNumber: Ref<string> = ref('');
 
 const defaults = computed(() => {
@@ -86,7 +86,9 @@ const defaults = computed(() => {
 });
 
 onMounted(() => {
-  country.value = getCountry(props.defaultCountry);
+  const cty = getCountryByCode(props.defaultCountry);
+  if (!cty) throw new Error(`${props.defaultCountry}: Invalid country code`)
+  country.value = cty
 });
 
 // onMounted(() => {
@@ -142,7 +144,7 @@ function numberChanged(newNumber: string | number | null) {
   // Change country only if a different country dialing prefix is entered
   // Multiple contries can use the same dialCode (e.g +1 => CA,US,...)
   const newCountryCode = asYouType.getCountry() as CountryCode;
-  const newCountry = newCountryCode && getCountry(newCountryCode);
+  const newCountry = newCountryCode && getCountryByCode(newCountryCode);
   if (newCountry && country.value?.dialCode !== newCountry?.dialCode) {
     console.log(`cty=${newCountry?.iso2}`);
     country.value = newCountry; // --> countryChanged()

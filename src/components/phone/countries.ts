@@ -262,17 +262,18 @@ export const countries: Country[] = allCountries.map(
   })
 );
 
-export function getCountry(countryCode: string): Country {
-  const search = countryCode.trim().toUpperCase();
-  return countries.filter((c) => c.iso2 === search)[0];
+export function getCountryByName(countryName: string): Country | undefined {
+  const search = countryName.trim().toLocaleLowerCase();
+  return countries.find((c) => c.name.toLocaleLowerCase() === search);
 }
 
-export const getCountryByDialCode = (val = ''): Country | null => {
-  const selected = countries.filter(
-    (f) => val.indexOf(`+${f.dialCode}`) !== -1
-  );
-  if (selected.length) return selected[0];
-  return null;
+export function getCountryByCode(countryCode: string): Country | undefined {
+  const search = countryCode.trim().toUpperCase();
+  return countries.find((c) => c.iso2 === search)
+}
+
+export function getCountryByDialCode(dialCode: string): Country | undefined {
+  return countries.find((c) => (`+${c.dialCode}`) === dialCode)
 };
 
 export const filterCountries = (term: string): Country[] => {
