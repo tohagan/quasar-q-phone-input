@@ -124,7 +124,7 @@ function countryChanged() {
 
 function numberChanged(newNumber: string | number | null) {
   // https://github.com/catamphetamine/libphonenumber-js#as-you-type-formatter
-  newNumber = newNumber?.toString() || '';
+  newNumber = newNumber?.toString().trim() || '';
   const countryCode = country.value.iso2 as CountryCode;
   const asYouType = new AsYouType(countryCode);
 
