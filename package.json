@@ -4,6 +4,7 @@
   "description": "Quasar Phone demo",
   "productName": "Quasar Phone demo",
   "author": "Tony OHagan",
+  "license": "MIT"
   "private": true,
   "stackblitz": {
     "startCommand": "quasar dev"
